@@ -3,6 +3,6 @@ npm i -g json-server
 json-server --watch data/db.json --port 8000
 
 npm i react-masonary-css
-npm i data-fns
+npm i date-fns
 npm install
 npm start
