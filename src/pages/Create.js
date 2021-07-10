@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import {useHistory} from 'react-router-dom';
+import { Paper } from '@material-ui/core';
 const useStyles = makeStyles({
   field: {
     marginTop: 20,
@@ -51,7 +52,7 @@ export default function Create() {
   //   console.log('1')
   //   , []);
   return (
-    <Container>
+    <Container component={Paper}>
       <Typography
 
         variant='h6'

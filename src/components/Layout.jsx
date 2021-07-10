@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {
+    IconButton,
     AppBar,
     Toolbar,
     makeStyles,
@@ -17,6 +18,9 @@ import { AddCircleOutlined } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router-dom';
 import { purple } from '@material-ui/core/colors';
 import { format } from 'date-fns'
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import { Container } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 
 const drawerWidth = 240;
 
@@ -56,10 +60,11 @@ const usestyles = makeStyles((theme) => ({
         backgroundColor: 'orange'
     }
 }))
-const Layout = ({ children }) => {
+const Layout = ({ children ,toggle}) => {
     const classes = usestyles();
     const history = useHistory();
     const location = useLocation();
+    const [dark, setdark] = useState(false)
     const menuItems = [
         {
             text: 'My Notes',
@@ -74,6 +79,9 @@ const Layout = ({ children }) => {
 
         }
     ]
+
+
+    
     return (
         <div className={classes.root}>
             {/* appbar */}
@@ -82,6 +90,10 @@ const Layout = ({ children }) => {
                     <Typography variant="h6" noWrap className={classes.typo} >
                         Website Name
                     </Typography>
+                    <IconButton>
+                     <Brightness4Icon onClick={toggle}/>
+                    </IconButton>
+                    
                     <Typography>
                         {format(new Date(), 'do MMMM Y')}
                     </Typography>
@@ -121,9 +133,9 @@ const Layout = ({ children }) => {
 
             </Drawer>
 
-            <div className={classes.page}>
+            <Container className={classes.page} component={Paper}>
                 <div className={classes.toolbar}></div>
-                {children}</div>
+                {children}</Container>
         </div>
     )
 }
