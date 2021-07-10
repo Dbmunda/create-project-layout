@@ -27,7 +27,7 @@ export default function Notes() {
   }
 
   return (
-    <Container component={Paper}>
+    <Container >
       <Masonry
         breakpointCols={breakpoints}
         className="my-masonry-grid"

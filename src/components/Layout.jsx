@@ -43,10 +43,11 @@ const usestyles = makeStyles((theme) => ({
     appBar: {
         width: `calc(100% - ${drawerWidth}px)`,
         //marginLeft: drawerWidth,
-        background: 'purple'
+        background: '#2196f3'
     },
     active: {
-        backgroundColor: '#f4f4f4'
+        backgroundColor: '#f4f4f4',
+        color:'#D90026'
     },
     title: {
         padding: theme.spacing(2)
@@ -64,7 +65,7 @@ const Layout = ({ children ,toggle}) => {
     const classes = usestyles();
     const history = useHistory();
     const location = useLocation();
-    const [dark, setdark] = useState(false)
+    
     const menuItems = [
         {
             text: 'My Notes',
@@ -133,9 +134,9 @@ const Layout = ({ children ,toggle}) => {
 
             </Drawer>
 
-            <Container className={classes.page} component={Paper}>
+            <div className={classes.page} >
                 <div className={classes.toolbar}></div>
-                {children}</Container>
+                {children}</div>
         </div>
     )
 }

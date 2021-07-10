@@ -5,7 +5,7 @@ import Create from './pages/Create'
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors'
 import Layout from '../src/components/Layout'
-
+import {Paper} from '@material-ui/core';
 function App() {
   const [dark, setdark] = useState(false)
   const theme = createTheme({
@@ -28,6 +28,7 @@ function App() {
   const toggle= () =>setdark(!dark)
   return (
     <ThemeProvider theme={theme}>
+      <Paper style={{height: '100vh'}}>
       <Router>
         <Layout toggle={toggle}>
           <Switch>
@@ -40,6 +41,7 @@ function App() {
           </Switch>
         </Layout>
       </Router>
+      </Paper>
     </ThemeProvider>
 
   );

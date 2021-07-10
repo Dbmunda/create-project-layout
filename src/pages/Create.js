@@ -52,7 +52,7 @@ export default function Create() {
   //   console.log('1')
   //   , []);
   return (
-    <Container component={Paper}>
+    <Container >
       <Typography
 
         variant='h6'
